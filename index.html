@@ -304,6 +304,84 @@
             font-size: 14px;
         }
 
+        .application-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px 40px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .application-section h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .qr-code {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .qr-code img {
+            width: 250px;
+            height: 250px;
+            display: block;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .apply-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .apply-text {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .application-section {
+                padding: 30px 20px;
+            }
+
+            .application-section h2 {
+                font-size: 22px;
+            }
+
+            .qr-code img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .apply-button {
+                font-size: 16px;
+                padding: 14px 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 36px;
@@ -364,7 +442,7 @@
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                ドラフターと呼ばれる機器を使い、ものづくりにおいて重要な「図面」の描き方を体験します。筆記用具持参してください。
+                                ドラフター呼ばれる機器を使い、ものづくりにおいて重要な「図面」の描き方を体験していただきます。筆記用具持参してください。
                             </div>
                             <span class="capacity">定員 5名</span>
                         </div>
@@ -376,7 +454,7 @@
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                手やすりやポンチ、ハンマなどを使い、アルミ材を加工する体験をしていただきます。貸し出しする作業服に着替えます。特別な持ち物は不要です。
+                                手やすり やボポジ、ハンマなどを使い、アルミ材を加工する体験をしていただきます。貸し出しする作業服に着替えます。特別な持ち物は不要です。
                             </div>
                             <span class="capacity">定員 5名</span>
                         </div>
@@ -394,7 +472,7 @@
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                紫外線硬化樹脂の特性を学んで、身近な製品に応用する実験と工作をします。
+                                紫外線硬化樹脂の特性を学んで、身近な製品に用用する実験と工作をします。
                             </div>
                             <span class="capacity">定員 10名</span>
                         </div>
@@ -424,7 +502,7 @@
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                ロボット工学・機械・新素材工学施設の見学をします。体験型コースに参加される保護者様もこちらで見学していただきます。
+                                ロボット工学・機械・新素材工学施設の見学をします。体験型コースに組み込まれる保護者様もこちらで見学していただきます。
                             </div>
                             <span class="capacity">定員 15名</span>
                         </div>
@@ -454,7 +532,7 @@
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                型を使ったマグカップ作りを学ぼう！
+                                型を使った制作方法でマグカップを作り、プロダクトデザインの知識を楽しもう！
                             </div>
                             <span class="capacity">定員 10名</span>
                         </div>
@@ -466,7 +544,7 @@
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                Illustratorというグラフィックデザインソフトを使用し、オリジナルのステッカーを作ります。
+                                Illustrator というグラフィックデザインソフトを使用し、オリジナルのステッカーを作ります。
                             </div>
                             <span class="capacity">定員 10名</span>
                         </div>
@@ -482,6 +560,21 @@
                 <li>上履きと下履きを入れる袋を準備してください。</li>
                 <li>筆記用具を持参してください。</li>
             </ul>
+        </div>
+
+        <div class="application-section">
+            <h2>体験入学に申し込む</h2>
+            <div class="qr-container">
+                <div class="qr-code">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAAAIeIw7AAAF/klEQVR4nO3bwZKbMAxAUZIm//+7nUM7h7aHbrczaTLhsQ0gNpKxnWmn04bHr2EBkiCBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkgkgUQSSCSBRBJIJIFEEkj0/wWlS2RaG2Y8HQAAAABJRU5ErkJggg==" alt="体験入学申込QRコード">
+                </div>
+                <div>
+                    <p class="apply-text">QRコードをスキャンするか、下のボタンから申し込んでください</p>
+                    <a href="https://script.google.com/macros/s/AKfycbyF8uGUD-xdhosHYqMRwADCAQ4JpKO4lD-m_fJ1D8uBgP7YhdiuWX-3ytnVfpLZUmiChg/exec" class="apply-button" target="_blank">
+                        申込はこちらから
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
