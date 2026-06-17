@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体験入学チラシ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+            height: 120px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="55" fill="none" stroke="white" stroke-width="2" opacity="0.3"/><circle cx="60" cy="30" r="12" fill="white" opacity="0.4"/><rect x="48" y="45" width="24" height="30" fill="white" opacity="0.3"/><rect x="35" y="78" width="18" height="20" fill="white" opacity="0.3"/><rect x="67" y="78" width="18" height="20" fill="white" opacity="0.3"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0.2;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .courses-section {
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 700;
+            border-left: 6px solid #667eea;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .robot-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .machinery-icon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .material-icon {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .facility-icon {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+
+        .craft-icon {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .department-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .department-header {
+            padding: 25px;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .department-content {
+            padding: 25px;
+            background: #fafafa;
+        }
+
+        .course-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .course-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .course-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-name::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .robot .course-name::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle cx="10" cy="5" r="3" fill="%23667eea"/><rect x="7" y="8" width="6" height="8" fill="%23667eea" rx="1"/><rect x="6" y="16" width="2" height="2" fill="%23667eea"/><rect x="12" y="16" width="2" height="2" fill="%23667eea"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .machinery .course-name::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 10L8 6L10 8L16 2" stroke="%23f5576c" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="none" stroke="%23f5576c" stroke-width="1.5"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .material .course-name::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="10" fill="%2300f2fe" opacity="0.3" rx="1"/><circle cx="10" cy="10" r="5" fill="none" stroke="%2300f2fe" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="%2300f2fe"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .facility .course-name::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="2" y="5" width="16" height="12" fill="none" stroke="%2338f9d7" stroke-width="1.5" rx="1"/><line x1="5" y1="5" x2="5" y2="17" stroke="%2338f9d7" stroke-width="1"/><line x1="10" y1="5" x2="10" y2="17" stroke="%2338f9d7" stroke-width="1"/><line x1="15" y1="5" x2="15" y2="17" stroke="%2338f9d7" stroke-width="1"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .craft .course-name::before {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 15C5 16.6569 6.34315 18 8 18C9.65685 18 11 16.6569 11 15" fill="none" stroke="%23f5a623" stroke-width="1.5" stroke-linecap="round"/><path d="M9 2V8" stroke="%23f5a623" stroke-width="1.5" stroke-linecap="round"/><line x1="5" y1="6" x2="13" y2="6" stroke="%23f5a623" stroke-width="1.5"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .course-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .capacity {
+            display: inline-block;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        /* Department Colors */
+        .robot .department-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .robot .capacity {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .machinery .department-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .machinery .capacity {
+            border-color: #f5576c;
+            color: #f5576c;
+        }
+
+        .material .department-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .material .capacity {
+            border-color: #00f2fe;
+            color: #00f2fe;
+        }
+
+        .facility .department-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .facility .capacity {
+            border-color: #38f9d7;
+            color: #38f9d7;
+        }
+
+        .craft .department-header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .craft .capacity {
+            border-color: #fee140;
+            color: #f5a623;
+        }
+
+        .notes-section {
+            background: #f0f4ff;
+            border-top: 4px solid #667eea;
+            padding: 40px;
+            margin: 0 40px 40px;
+            border-radius: 10px;
+        }
+
+        .notes-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notes-title::before {
+            content: '⚠️';
+            font-size: 24px;
+        }
+
+        .notes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notes-list li {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .notes-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .notes-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .department-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                border-radius: 10px;
+            }
+
+            .courses-section,
+            .notes-section {
+                padding: 30px 20px;
+                margin: 0 20px 30px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+        </div>
+
+        <div class="courses-section">
+            <h2 class="section-title">
+                <span class="section-icon robot-icon">🤖</span>
+                ロボット工学科
+            </h2>
+            <div class="department-grid">
+                <div class="department-card robot">
+                    <div class="department-header">レゴスパイクで遊ぼう！</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                LEGOSPIKE を使用してブロックプログラミングを学びます。
+                            </div>
+                            <span class="capacity">定員 10名</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">
+                <span class="section-icon machinery-icon">⚙️</span>
+                機械科
+            </h2>
+            <div class="department-grid">
+                <div class="department-card machinery">
+                    <div class="department-header">手書き製図体験</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                ドラフター呼ばれる機器を使い、ものづくりにおいて重要な「図面」の描き方を体験していただきます。筆記用具持参してください。
+                            </div>
+                            <span class="capacity">定員 5名</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="department-card machinery">
+                    <div class="department-header">手仕上げ加工体験</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                手やすり やボポジ、ハンマなどを使い、アルミ材を加工する体験をしていただきます。貸し出しする作業服に着替えます。特別な持ち物は不要です。
+                            </div>
+                            <span class="capacity">定員 5名</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">
+                <span class="section-icon material-icon">✨</span>
+                新素材工学科
+            </h2>
+            <div class="department-grid">
+                <div class="department-card material">
+                    <div class="department-header">UVレジンでキーホルダーを作ろう！</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                紫外線硬化樹脂の特性を学んで、身近な製品に用用する実験と工作をします。
+                            </div>
+                            <span class="capacity">定員 10名</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="department-card material">
+                    <div class="department-header">チタンプレートキーホルダー作り</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                電気の力でチタンプレートに模様を付ける実験をします。
+                            </div>
+                            <span class="capacity">定員 10名</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">
+                <span class="section-icon facility-icon">🔬</span>
+                ロボット工学・機械・新素材工学科
+            </h2>
+            <div class="department-grid">
+                <div class="department-card facility">
+                    <div class="department-header">施設見学コース</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                ロボット工学・機械・新素材工学施設の見学をします。体験型コースに組み込まれる保護者様もこちらで見学していただきます。
+                            </div>
+                            <span class="capacity">定員 15名</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">
+                <span class="section-icon craft-icon">🎨</span>
+                工芸デザイン科
+            </h2>
+            <div class="department-grid">
+                <div class="department-card craft">
+                    <div class="department-header">ろくろ体験＆PC操作体験</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                ろくろ体験 & イラストレーションソフトを体験します。
+                            </div>
+                            <span class="capacity">定員 20名</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="department-card craft">
+                    <div class="department-header">ドロドロ粘土でマグカップ作りを学ぼう！</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                型を使った制作方法でマグカップを作り、プロダクトデザインの知識を楽しもう！
+                            </div>
+                            <span class="capacity">定員 10名</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="department-card craft">
+                    <div class="department-header">グラフィックデザインソフト体験</div>
+                    <div class="department-content">
+                        <div class="course-item">
+                            <div class="course-description">
+                                Illustrator というグラフィックデザインソフトを使用し、オリジナルのステッカーを作ります。
+                            </div>
+                            <span class="capacity">定員 10名</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notes-section">
+            <h3 class="notes-title">参加上の注意事項</h3>
+            <ul class="notes-list">
+                <li>暑くなることが予想されるので、水分、タオル等は必ず持参してください。</li>
+                <li>上履きと下履きを入れる袋を準備してください。</li>
+                <li>筆記用具を持参してください。</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>
