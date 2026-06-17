@@ -49,19 +49,6 @@
             opacity: 0.2;
         }
 
-        .header h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .header p {
-            font-size: 18px;
-            opacity: 0.95;
-            margin-bottom: 5px;
-        }
-
         .courses-section {
             padding: 60px 40px;
         }
@@ -210,13 +197,12 @@
 
         .capacity {
             display: inline-block;
-            background: white;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
-            color: #333;
-            border: 2px solid #ddd;
+            color: white;
+            border: none;
         }
 
         /* Department Colors */
@@ -225,8 +211,7 @@
         }
 
         .robot .capacity {
-            border-color: #667eea;
-            color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .machinery .department-header {
@@ -234,8 +219,7 @@
         }
 
         .machinery .capacity {
-            border-color: #f5576c;
-            color: #f5576c;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
         .material .department-header {
@@ -243,8 +227,7 @@
         }
 
         .material .capacity {
-            border-color: #00f2fe;
-            color: #00f2fe;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
         .facility .department-header {
@@ -252,8 +235,7 @@
         }
 
         .facility .capacity {
-            border-color: #38f9d7;
-            color: #38f9d7;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
         }
 
         .craft .department-header {
@@ -261,8 +243,7 @@
         }
 
         .craft .capacity {
-            border-color: #fee140;
-            color: #f5a623;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
         }
 
         .notes-section {
@@ -361,7 +342,7 @@
             </h2>
             <div class="department-grid">
                 <div class="department-card robot">
-                    <div class="department-header">① レゴスパイクで遊ぼう！</div>
+                    <div class="department-header">レゴスパイクで遊ぼう！</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
@@ -379,11 +360,11 @@
             </h2>
             <div class="department-grid">
                 <div class="department-card machinery">
-                    <div class="department-header">② 手書き製図体験</div>
+                    <div class="department-header">手書き製図体験</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                ドラフターと呼ばれる機器を使い、ものづくりにおいて重要な「図面」の描き方を体験していただきます。筆記用具を持参してください。
+                                ドラフターと呼ばれる機器を使い、ものづくりにおいて重要な「図面」の描き方を体験します。筆記用具持参してください。
                             </div>
                             <span class="capacity">定員 5名</span>
                         </div>
@@ -391,11 +372,11 @@
                 </div>
 
                 <div class="department-card machinery">
-                    <div class="department-header">③ 手仕上げ加工体験</div>
+                    <div class="department-header">手仕上げ加工体験</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                手やすりやポンチ、ハンマなどを使い、アルミ材を加工する体験します。貸し出しする作業服に着替えます。特別な持ち物は不要です。
+                                手やすりやポンチ、ハンマなどを使い、アルミ材を加工する体験をしていただきます。貸し出しする作業服に着替えます。特別な持ち物は不要です。
                             </div>
                             <span class="capacity">定員 5名</span>
                         </div>
@@ -409,7 +390,7 @@
             </h2>
             <div class="department-grid">
                 <div class="department-card material">
-                    <div class="department-header">④ UVレジンでキーホルダーを作ろう！</div>
+                    <div class="department-header">UVレジンでキーホルダーを作ろう！</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
@@ -421,7 +402,7 @@
                 </div>
 
                 <div class="department-card material">
-                    <div class="department-header">⑤ チタンプレートキーホルダー作り</div>
+                    <div class="department-header">チタンプレートキーホルダー作り</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
@@ -439,7 +420,7 @@
             </h2>
             <div class="department-grid">
                 <div class="department-card facility">
-                    <div class="department-header">⑥ 施設見学コース</div>
+                    <div class="department-header">施設見学コース</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
@@ -457,11 +438,11 @@
             </h2>
             <div class="department-grid">
                 <div class="department-card craft">
-                    <div class="department-header">⑦ ろくろ体験＆PC操作体験</div>
+                    <div class="department-header">ろくろ体験＆PC操作体験</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                ろくろ&イラストレーションソフトを体験します。
+                                ろくろ体験 & イラストレーションソフトを体験します。
                             </div>
                             <span class="capacity">定員 20名</span>
                         </div>
@@ -469,11 +450,11 @@
                 </div>
 
                 <div class="department-card craft">
-                    <div class="department-header">⑧ ドロドロ粘土でマグカップ作りを学ぼう！</div>
+                    <div class="department-header">ドロドロ粘土でマグカップ作りを学ぼう！</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
-                                型を使った制作方法でマグカップを作り、プロダクトデザインの知識を楽しもう！
+                                型を使ったマグカップ作りを学ぼう！
                             </div>
                             <span class="capacity">定員 10名</span>
                         </div>
@@ -481,7 +462,7 @@
                 </div>
 
                 <div class="department-card craft">
-                    <div class="department-header">⑨ グラフィックデザインソフト体験</div>
+                    <div class="department-header">グラフィックデザインソフト体験</div>
                     <div class="department-content">
                         <div class="course-item">
                             <div class="course-description">
